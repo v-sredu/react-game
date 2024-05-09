@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body {
+    --d: rgb(53, 19, 26);
+    --dd: rgb(52, 24, 29);
+    --r: rgb(223, 61, 61);
+    --l: rgb(123, 67, 77);
+    --dl: rgb(94, 53, 67);
+    --ll: rgb(149, 195, 184);
+    --o: rgb(205, 146, 104);
+    position: relative;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 900;
+    font-style: normal;
+    overflow: hidden;
+    background-color: var(--dd);
+}
+
+.game {
+    display: flex;
+    padding: 20px;
+    height: 95vh;
+}
+
+/* часть с персонажем и иконками */
+.wrapper-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex-basis: 100px;
+    flex-grow: 13;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--ll);
+}
+
+.background {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ll);
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+}
+
+/* иконки игры */
+header {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.streak-lover-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 5px 5px 5px 40px;
+    background-color: white;
+    box-shadow:
+        inset 40px 0 0 0 var(--d),
+        inset 0 0 0 5px var(--d);
+}
+
+.streak-lover {
+    width: 50%;
+    height: 100%;
+    background-color: var(--r);
+}
+
+.streak-lover-wrapper::before {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    top: 0;
+    left: -10px;
+    width: 70px;
+    height: 70px;
+    background: transparent url("img/heart.svg") center center;
+    background-size: cover;
+}
+
+.streak-lover-wrapper span {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border: outset 4px var(--d);
+    border-radius: 10%;
+    background: var(--l) no-repeat center;
+    cursor: pointer;
+}
+
+.icon:active {
+    border-style: solid;
+}
+
+.setting {
+    background-image: url("img/setting.svg");
+    background-size: 50px;
+}
+
+.selected-background {
+    background-image: url("img/background-button.svg");
+    background-size: 40px;
+}
+
+/* кухня */
+.block-kitchen {
+    padding: 20px;
+    flex-basis: 100px;
+    flex-grow: 9;
+    background-color: var(--dl);
+}
+
+.list-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80%;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.list-items::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    border: dashed 2px rgb(150, 115, 122);
+    background-color: var(--dl);
+    cursor: pointer;
+}
+
+.item:active {
+    filter: brightness(0.9);
+}
+
+.item img {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.kitchen {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.kitchen.main.error {
+    animation: error 0.3s ease-in-out infinite;
+}
+
+@keyframes error {
+    from {
+        transform: translate(0px);
+        outline: solid 4px var(--r);
+        ;
+    }
+
+    25% {
+        transform: translate(2px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(0px);
+    }
+
+    75% {
+        transform: translate(-2px);
+    }
+
+    to {
+        transform: translate(0px);
+    }
+}
+
+.kitchen .wrapper {
+    position: relative;
+    display: block;
+    padding-top: 100%;
+    background: var(--ll);
+}
+
+.kitchen img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ll);
+}
+
+.kitchen img.result {
+    cursor: pointer;
+}
+
+.kitchen img.result:hover {
+    transform: scale(1.02);
+}
+
+.kitchen img.result:active {
+    filter: brightness(0.9);
+}
+
+.wrapper.sign-equal {
+    background: transparent url("img/equal.svg") center center no-repeat;
+}
+
+/* новый элемент (всплывающая табличка) */
+.new-item {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translate(-50%, -80%);
+    transform-origin: 40px 50px;
+    animation: new-item 4s cubic-bezier(0.03, 1, 0.120, 1) forwards;
+    background-color: bisque;
+}
+
+.new-item img {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes new-item {
+    from {
+        outline: none;
+        transform: scale(0.2) rotate(-360deg) translate(-50%, -80%);
+    }
+
+    25% {
+        outline: var(--o) solid 20px;
+        transform: scale(1.1) rotate(10deg) translate(-50%, -80%);
+    }
+
+    50% {
+        outline: var(--o) solid 15px;
+        ;
+        transform: scale(1) rotate(0deg) translate(-50%, -80%);
+    }
+
+    75% {
+        outline: var(--o) solid 15px;
+        ;
+        transform: scale(1) translate(-50%, -80%);
+    }
+
+    to {
+        /* outline: none; */
+        transform: scale(0) translate(-50%, -80%);
+    }
+}
+
+
+/* рецепт предмета (всплывающее окно)  */
+.wrapper-window {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 13, 7, 0.596);
+}
+
+.recept {
+    line-height: 1.5;
+}
+
+.recept,
+.background-checked {
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+    left: 50%;
+    width: 800px;
+    padding: 40px;
+    margin-top: 20px;
+    font-size: 30px;
+    color: bisque;
+    transform: translate(-50%, -100%);
+    background-color: var(--dd);
+    border-radius: 20px;
+}
+
+.recept span {
+    color: var(--r);
+    ;
+    text-transform: uppercase;
+}
+
+.recept .kitchen {
+    margin-top: 20px;
+}
+
+.recept .button,
+.background-checked .button {
+    z-index: 1;
+    position: absolute;
+    top: -5%;
+    left: 90%;
+    width: 60px;
+    height: 60px;
+    background: var(--ll) url("img/cross.svg") center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.recept .button:active,
+.background-checked .button:active {
+    filter: brightness(0.2);
+}
+
+.recept .button-media {
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: var(--l);
+    cursor: pointer;
+}
+
+.background-checked {
+    margin-top: 100px;
+}
+
+.items-background {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item-background {
+    position: relative;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(105, 78, 59);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.item-background:hover {
+    transform: scale(1.05);
+}
+
+.item-background:active {
+    filter: brightness(0.8);
+}
+
+.item-background img {
+    width: 100%;
+    height: 100%;
+}
+
+.item-background .disabled {
+    filter: contrast(0.7) brightness(0.7) blur(1px);
+}
+
+.disabled {
+    filter: brightness(0.7) contrast(0.9);
+}
+
+/* адаптив */
+@media screen and (max-width: 1500px) {
+    .kitchen {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .kitchen {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    .recept,
+    .background-checked {
+        width: 450px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 833px) {
+    .game {
+        flex-direction: column;
+    }
+
+    .wrapper-main {
+        flex-basis: 100px;
+        flex-grow: 1;
+        height: 200px;
+    }
+
+    .block-kitchen {
+        flex-grow: 1;
+        height: 400px;
+    }
+
+    .kitchen.main {
+        max-width: 400px;
+        margin: 10px auto 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .recept,
+    .background-checked {
+        width: 350px;
+        font-size: 20px;
+        padding: 30px;
+    }
+
+    .recept .button,
+    .background-checked .button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .new-item {
+        font-size: 15px;
+    }
+
+    .new-item img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .recept,
+    .background-checked {
+        width: 300px;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .recept .button,
+    .background-checked .button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .item-background {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+    }
+
+    .kitchen {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.3fr) minmax(0, 1fr);
+        gap: 8px;
+        padding: 8px;
+        margin-top: 8px;
+    }
+
+    .new-item {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .new-item img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    .item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        background-size: 30px;
+    }
+
+    .streak-lover-wrapper::before {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 367px) {
+    .game {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .block-kitchen {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 328px) {
+    .item {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-height: 743px) and (min-width: 833px) {
+    .kitchen {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-height: 860px) and (max-width: 833px) {
+    .block-kitchen {
+        max-height: 350px;
+    }
+
+    .list-items {
+        height: 250px;
+        gap: 5px;
+    }
+
+    .item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        background-size: 30px;
+    }
+
+    .streak-lover-wrapper::before {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+@media screen and (max-height: 750px) and (max-width: 833px) {
+    .block-kitchen {
+        max-height: 300px;
+    }
+
+    .list-items {
+        height: 200px;
+    }
+
+}
+
+@media screen and (max-height: 550px) and (max-width: 833px) {
+    .block-kitchen {
+        max-height: 280px;
+    }
+
+    .list-items {
+        height: 180px;
+    }
+}

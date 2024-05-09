@@ -1,0 +1,21 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+    <g>
+     <rect fill="none" id="canvas_background" height="62" width="62" y="-1" x="-1"/>
+     <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+      <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+     </g>
+    </g>
+    <g fill="rgb(255, 255, 255)" stroke="rgb(255, 255, 255)">
+     <title>Layer 1</title>
+     <rect id="svg_3" height="20" width="5" y="10.491804" x="13.351719" stroke-width="1.5"/>
+     <rect id="svg_4" height="20" width="5" y="10.491803" x="41.762933" stroke-width="1.5"/>
+     <rect transform="rotate(89.806884765625 30.10928535461427,34.51084899902344) " id="svg_5" height="20" width="5" y="24.510926" x="27.609285" stroke-width="1.5"/>
+     <rect transform="rotate(89.75405883789062 30.10928916931152,6.441896915435791) " id="svg_6" height="20" width="5" y="-3.55812" x="27.609289" stroke-width="1.5"/>
+     <rect id="svg_7" height="20.480874" width="5" y="35.519126" x="27.5" stroke-width="1.5"/>
+     <rect transform="rotate(89.96843719482422 30.00000381469727,47.749710083007805) " id="svg_9" height="18.8799" width="5" y="38.309764" x="27.500005" stroke-width="1.5"/>
+     <rect id="svg_11" height="5" width="5" y="7.540983" x="16.954189" stroke-width="1.5"/>
+     <rect id="svg_12" height="5" width="5" y="28.797813" x="16.954189" stroke-width="1.5"/>
+     <rect id="svg_13" height="5" width="5" y="28.797814" x="38.047087" stroke-width="1.5"/>
+     <rect id="svg_14" height="5" width="5" y="7.540983" x="38.047085" stroke-width="1.5"/>
+    </g>
+   </svg>

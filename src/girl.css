@@ -1,0 +1,11 @@
+.container {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+.drag-drop-item {
+    /* transition: all 1s ease-in-out; */
+    width: 30%;
+    height: auto;
+}

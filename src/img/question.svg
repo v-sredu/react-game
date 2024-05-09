@@ -1,0 +1,18 @@
+<svg width="60.00000000000001" height="60.00000000000001" xmlns="http://www.w3.org/2000/svg">
+    <!-- Created with SVG Editor - http://github.com/mzalive/SVG Editor/ -->
+    <g>
+     <title>background</title>
+     <rect fill="transparent" id="canvas_background" height="62" width="62" y="-1" x="-1"/>
+     <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+      <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+     </g>
+    </g>
+    <g stroke="rgb(53, 19, 26)" fill="rgb(53, 19, 26)" >
+     <title>Layer 1</title>
+     <rect id="svg_1" height="5" width="30.33588" y="7.358739" x="16.034639" stroke-width="1.5"/>
+     <rect transform="rotate(89.52406311035156 44.03144836425782,21.09426498413086) " id="svg_2" height="5" width="17.772722" y="18.594264" x="35.14509" stroke-width="1.5"/>
+     <rect id="svg_3" height="5" width="20.717564" y="28.885449" x="25.805627" stroke-width="1.5"/>
+     <rect transform="rotate(89.52406311035156 28.32996368408203,36.28496170043946) " id="svg_4" height="5" width="11.208066" y="33.784962" x="22.725932" stroke-width="1.5"/>
+     <rect transform="rotate(89.52406311035156 28.335668563842766,50.09769439697266) " id="svg_5" height="5" width="5" y="47.597695" x="25.835669" stroke-width="1.5"/>
+    </g>
+   </svg>

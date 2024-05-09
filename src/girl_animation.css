@@ -1,0 +1,161 @@
+.container {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.girl-items {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+}
+
+.girl-item {
+    position: absolute;
+    inset: -5vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.el-1 {
+    transform: translateZ(-30px);
+    background-image: url("./img/girl/back_hair.jpg");
+}
+
+.el-2 {
+    transform: translateZ(50px);
+    background-image: url("./img/girl/body.jpg")
+}
+
+.el-3 {
+    transform: translateZ(100px);
+    background-image: url("./img/girl/head.jpg");
+}
+
+.el-4 {
+    transform: translateZ(130px);
+    background-image: url("./img/girl/eyes.png");
+}
+
+.el-5 {
+    transform: translateZ(130px);
+    background-image: url("./img/girl/front_hair.jpg");
+}
+
+.el-6 {
+    transform: translateZ(160px);
+    background-image: url("./img/girl/face.png");
+}
+
+/* import { useState } from "react";
+import "./girl_animation.css";
+
+function BlockMainInterface({ EAT, IMAGES_BACKGROUND, openItems }) {
+  const [background, setBackground] = useState("");
+  const [rotate, setRotate] = useState(["0deg", "0deg"])
+  // должны сохраняться
+  const [openBackground, addOpenBackground] = useState(["item-1"]);
+  const [changeBackground, openChangeBackground] = useState(false);
+
+
+  document.addEventListener('mousemove', (e) => {
+    const y = ((e.clientX - window.innerWidth / 2) / 2  * .05) + "deg";
+    const x = ((e.clientY - window.innerHeight) / 2 * -.05) + "deg";
+    setRotate([x, y]);
+  });
+
+  const maxWidth = Object.keys(EAT).length;
+  const openWidth = openItems.length;
+  const width = (100 / maxWidth) * openWidth + "%";
+  function AddBackground() {
+    const handlerClose = () => {
+      openChangeBackground(false);
+    };
+    // если не svg то + default
+    const items = Object.keys(IMAGES_BACKGROUND).map((key) => (
+      <li className="item-background" key={key}>
+        <img
+          src={require("" + IMAGES_BACKGROUND[key]["icon"])}
+          alt=""
+          className={openBackground.includes(key) ? "" : "disabled"}
+          id={key}
+        />
+      </li>
+    ));
+
+    const changeBackground = () => (e) => {
+      const isButton = e.target.parentNode.className === "item-background";
+      if (!isButton) {
+        return;
+      }
+      const id = e.target.id;
+      if (e.target.className === "disabled") {
+        addOpenBackground([...openBackground, id]);
+      }
+      openChangeBackground(false);
+      setBackground(IMAGES_BACKGROUND[id]["background"]);
+    };
+
+    return (
+      <div
+        className="wrapper-window"
+        style={{ backgroundImage: "url(./img/background/back.png)" }}
+      >
+        <div className="background-checked">
+          <div className="button" onClick={handlerClose} />
+          <ul className="items-background" onClick={changeBackground()}>
+            {items}
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
+  const handlerChandgeBackground = () => openChangeBackground(true);
+
+  return (
+    <>
+      {changeBackground ? <AddBackground /> : ""}
+      <div className="wrapper-main">
+        <div className="background">
+          {background ? (
+            <img src={require(background + "")} alt="" className="background" />
+          ) : (
+            ""
+          )}
+        </div>
+        <header>
+          <div className="setting icon" />
+          <div className="streak-lover-wrapper">
+            <div className="streak-lover" style={{ width: width }} />
+            <span>{`${openWidth}/${maxWidth}`}</span>
+          </div>
+          <div
+            onClick={handlerChandgeBackground}
+            className="selected-background icon"
+          />
+        </header>
+        <div className="container">
+          <div className="girl-items" style={{transform: `rotateX(${rotate[0]}) rotateY(${rotate[1]})`}}>
+            <div className="girl-item el-1" />
+            <div className="girl-item el-2" />
+            <div className="girl-item el-3" />
+            <div className="girl-item el-4"/>
+            <div className="girl-item el-5"/>
+            <div className="girl-item el-6" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default BlockMainInterface; */
+
