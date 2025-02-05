@@ -1,11 +1,9 @@
 import { useState } from "react";
-import "./girl.css";
 
 function BlockMainInterface({
   EAT,
   IMAGES_BACKGROUND,
   openItems,
-  dropItems,
 }) {
   const [background, setBackground] = useState(null);
   // должны сохраняться
@@ -63,6 +61,19 @@ function BlockMainInterface({
 
   const handlerChandgeBackground = () => openChangeBackground(true);
 
+  document.querySelector("body").addEventListener("mousemove", eyeball);
+  function eyeball(e) {
+      let eye = document.querySelectorAll(".eye");
+      eye.forEach(function (eye) {
+          let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2)
+          let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+          let radian = Math.atan2(e.pageX - x, e.pageY - y);
+          let rot = (radian * (180 / Math.PI) * -1) - 135;
+          eye.style.transform  = "rotate("+ rot +"deg)"
+      })
+  }
+
+
   return (
     <>
       {changeBackground ? <AddBackground /> : ""}
@@ -78,7 +89,13 @@ function BlockMainInterface({
             className="selected-background icon"
           />
         </header>
-        {dropItems}
+        <div className="container">
+          <div className="eyes">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+          <div className="mouth"></div>
+        </div>
       </div>
     </>
   );

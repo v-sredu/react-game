@@ -39,20 +39,23 @@ function BlockKitchen({ openItems, addOpenItems, EAT, COOKED, onDrag }) {
   };
 
   const items = Object.keys(EAT).map((id, count) => (
-    <li className="item" key={count}>
-      {openItems.includes(id) ? (
-        <img
-          draggable={true}
-          onDragStart={onDrag}
-          src={require("" + EAT[id]["url"])}
-          alt=""
-          id={id}
-        />
-      ) : (
-        <img src={require("./img/question.svg").default} alt="" id={id} draggable={false}/>
-      )}
-    </li>
-  ));
+      <li className="item" key={count}>
+        {openItems.includes(id) ? (
+            <img
+                className={"item-img"}
+                src={require("" + EAT[id]["url"])}
+                alt=""
+                id={id}
+            />
+        ) : (
+            <svg className={"item-img"} id={id}>
+              <use xlinkHref={"#question"}></use>
+            </svg>
+  )
+}
+</li>
+))
+  ;
 
   const wrapperElements = (listItems = itemsActive) => {
     return [0, 1, 2].map((i) => (
@@ -61,7 +64,7 @@ function BlockKitchen({ openItems, addOpenItems, EAT, COOKED, onDrag }) {
           src={
             listItems[i]
               ? require("" + EAT[listItems[i]]["url"])
-              : require("./img/question.svg").default
+              : require("./img/question.svg")
           }
           alt=""
         />
@@ -152,7 +155,7 @@ function BlockKitchen({ openItems, addOpenItems, EAT, COOKED, onDrag }) {
   }
   return (
     <>
-      {idRecipe ? <Recipe id={idRecipe} /> : ""}
+      {idRecipe ? <Recipe id={idRecipe}/> : ""}
       {newItem ? <NewItem newItem={newItem} /> : ""}
       <div className="block-kitchen">
         <ul className="list-items" onClick={clickHandler()}>
@@ -160,12 +163,12 @@ function BlockKitchen({ openItems, addOpenItems, EAT, COOKED, onDrag }) {
         </ul>
         <div className={`kitchen main ${error ? "error" : ""}`}>
           {wrapperElements()}
-          <div className="wrapper sign-equal" />
+          <div className="wrapper sign-equal"/>
           <div className="wrapper result" onClick={calculation}>
             <img
-              className="result"
-              src={require("./img/cooked.svg").default}
-              alt=""
+                className="result"
+                src={require("./img/cooked.svg").default}
+                alt=""
             />
           </div>
         </div>

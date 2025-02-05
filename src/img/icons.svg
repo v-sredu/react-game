@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!--    setting -->
+    <symbol enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="setting"
+            xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="m22 14v-4h-2.3c-.2-.7-.5-1.4-.9-2.1l1.6-1.6-2.8-2.8-1.6 1.6c-.6-.4-1.3-.7-2.1-.9v-2.2h-4v2.3c-.6.1-1.3.4-2 .8l-1.6-1.6-2.8 2.9 1.6 1.6c-.4.6-.7 1.3-.8 2h-2.3v4h2.3c.2.7.5 1.4.9 2.1l-1.6 1.6 2.8 2.8 1.6-1.6c.6.4 1.3.7 2.1.8v2.3h4v-2.3c.7-.2 1.4-.5 2.1-.8l1.6 1.6 2.8-2.8-1.6-1.6c.4-.6.7-1.3.9-2.1zm-10 2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"
+                fill="white"></path>
+    </symbol>
+    <!--    question-->
+    <symbol  id="question" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgb(53, 19, 26)" fill="rgb(53, 19, 26)">
+            <rect id="svg_1" height="5" width="30.33588" y="7.358739" x="16.034639" stroke-width="1.5"/>
+            <rect transform="rotate(89.52406311035156 44.03144836425782,21.09426498413086) " id="svg_2" height="5"
+                  width="17.772722" y="18.594264" x="35.14509" stroke-width="1.5"/>
+            <rect id="svg_3" height="5" width="20.717564" y="28.885449" x="25.805627" stroke-width="1.5"/>
+            <rect transform="rotate(89.52406311035156 28.32996368408203,36.28496170043946) " id="svg_4" height="5"
+                  width="11.208066" y="33.784962" x="22.725932" stroke-width="1.5"/>
+            <rect transform="rotate(89.52406311035156 28.335668563842766,50.09769439697266) " id="svg_5" height="5"
+                  width="5" y="47.597695" x="25.835669" stroke-width="1.5"/>
+        </g>
+    </symbol>
+    <!--    heart-->
+    <symbol width="9" height="9" id="heart" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 0h2v1h1V0h2v1h1v1h1v3H8v1H7v1H6v1H5v1H4V8H3V7H2V6H1V5H0V2h1V1h1z"/>
+        <path d="M2 1h2v1h1V1h2v1h1v3H7v1H6v1H5v1H4V7H3V6H2V5H1V2h1V1" fill="red"/>
+        <g>
+            <path d="M2 3V2h1v1z" fill="#ffc8c8"/>
+            <path d="M1 4h1v1h1v1h1v1h1V6h1V5h1V4h1v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4" fill="#bb1313"/>
+        </g>
+    </symbol>
+    <!--    equal-->
+    <symbol width="60" height="60" id="equal" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <rect fill="none" height="62" width="62" y="-1" x="-1"/>
+            <g display="none" overflow="visible">
+                <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+            </g>
+        </g>
+        <g fill="black">
+            <rect transform="rotate(-90 30.000001907348636,23.114755630493168) " stroke="#000" id="svg_15"
+                  height="33.770492" width="5" y="6.229508" x="27.500001" stroke-opacity="null" stroke-width="1.5"/>
+            <rect transform="rotate(-90 30.000000000000004,37.103824615478516) " stroke="#000" id="svg_16"
+                  height="33.770492" width="5" y="20.218579" x="27.5" stroke-opacity="null" stroke-width="1.5"/>
+        </g>
+    </symbol>
+    <!--    cross-->
+    <symbol fill="#000000" width="80" height="80" viewBox="0 0 80 80" id="cross" xmlns="http://www.w3.org/2000/svg">
+        <path d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"/>
+    </symbol>
+    <!--    cooked-->
+    <symbol fill="rgb(53, 19, 26)" height="80" width="80" id="cooked"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path class="cls-1" d="M11,4V2H5V4H2V5H14V4ZM6,4V3h4V4ZM2,13H3v1H13V13h1V6H2Z"/>
+    </symbol>
+    <!--    background-button-->
+    <symbol
+            width="80" height="80" id="background-button" viewBox="0 -2 20 20" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+            <g transform="translate(-380.000000, -3881.000000)">
+                <g transform="translate(56.000000, 160.000000)">
+                    <path d="M336,3725.5 C336,3724.948 336.448,3724.5 337,3724.5 C337.552,3724.5 338,3724.948 338,3725.5 C338,3726.052 337.552,3726.5 337,3726.5 C336.448,3726.5 336,3726.052 336,3725.5 L336,3725.5 Z M340,3733 L328,3733 L332.518,3726.812 L335.354,3730.625 L336.75,3728.75 L340,3733 Z M326,3735 L342,3735 L342,3723 L326,3723 L326,3735 Z M324,3737 L344,3737 L344,3721 L324,3721 L324,3737 Z"
+                          id="image_picture-[#972]"></path>
+                </g>
+            </g>
+        </g>
+    </symbol>
+</svg>
