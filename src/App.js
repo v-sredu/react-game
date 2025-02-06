@@ -5,7 +5,6 @@ import StartPage from "./pages/StartPage";
 import EndPage from "./pages/EndPage";
 import "./css/reset.css";
 import "./css/App.css";
-
 function App() {
 	return (
 			<BrowserRouter>
