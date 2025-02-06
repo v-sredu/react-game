@@ -11,10 +11,6 @@ function BlockKitchen({openItems, addOpenItems, EAT, COOKED}) {
 	const [itemsActive, setItemsActive] = useState([]);
 	const [showRecipe, addShowRecipe] = useState([]);
 
-	if (EAT.length === openItems.length) {
-		navigate("/end");
-	}
-
 	// двойной и одиночный клик по продукту
 	let count = 0;
 	let flag = true;
@@ -38,7 +34,7 @@ function BlockKitchen({openItems, addOpenItems, EAT, COOKED}) {
 				}
 				count = 0;
 				flag = true;
-			}, 220);
+			}, 250);
 		}
 		flag = false;
 	};
@@ -75,6 +71,10 @@ function BlockKitchen({openItems, addOpenItems, EAT, COOKED}) {
 				addError(false);
 			}, 300);
 			return;
+		}
+
+		if (Object.keys(EAT).length === openItems.length + 1) {
+			navigate("/end");
 		}
 		if (!openItems.includes(id)) {
 			addOpenItems([...openItems, id]);
